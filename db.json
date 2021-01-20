@@ -1,0 +1,8 @@
+{"tyontekijat":
+    [
+     {"firstName":"Mauno", "lastName":"Ahonen", "address":"Kujatie 3", "numbers":[{"home":"7289378329"},{"work":"8935784931"}]},
+     {"firstName":"Matti", "lastName":"Näsä", "address":"Siltakatu 8", "numbers":[{"home":"8548632429"}]},
+     {"firstName":"Raimo", "lastName":"Vormisto", "address":"Kolmikulma 5C", "numbers":[{"home":"549648309430"}, {"work":"348578923752"}]},
+     {"firstName":"Timo", "lastName":"Silakka", "address":"Talitie 2", "numbers":[{"home":"82830489958"}]}
+    ]
+}
