@@ -5,8 +5,9 @@ import Kartta from './Kartta'
 
 const Kaupunkipyorat = () => {
     const [pyorat, setPyorat] = useState([])
-    const [koordinaattiX, setKoordinaattiX] = useState(24.840319000421573)
-    const [koordinaattiY, setKoordinaattiY] = useState(60.16581999969327)
+    const [koordinaattiX, setKoordinaattiX] = useState('')
+    const [koordinaattiY, setKoordinaattiY] = useState('')
+    const [asematHidden, setAsematHidden] = useState(true)
 
     useEffect(() => {
         async function fetchdata() {
@@ -22,13 +23,24 @@ const Kaupunkipyorat = () => {
         setKoordinaattiX(x)
         setKoordinaattiY(y)
         console.log(koordinaattiX, koordinaattiY)
+        naytaAsemat()
+    }
+
+    const naytaAsemat = () => {
+        setAsematHidden(!asematHidden)
     }
 
     return (
         <div>
-            <Kartta y={koordinaattiY} x={koordinaattiX}/>
             {console.log(pyorat)}
-            {pyorat.features.map(pyora => {
+            {asematHidden &&
+                <div>
+                    <Button onClick={() => naytaAsemat()}>Näytä asemat</Button>
+                    <Kartta Y={koordinaattiY} X={koordinaattiX}/>
+                </div>
+            }
+            {!asematHidden &&
+            pyorat.features.map(pyora => {
                 return (
                     <li>
                         Asema
